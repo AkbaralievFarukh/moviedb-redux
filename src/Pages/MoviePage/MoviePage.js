@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate, useParams} from "react-router-dom";
-import {getMovieById} from "../../Redux/Actions/MovieAction";
+import {getMovieById, getMovieTrailer} from "../../Redux/Actions/MovieAction";
 import './MoviePage.css'
 
 const MoviePage = () => {
@@ -9,11 +9,15 @@ const MoviePage = () => {
     const navigate = useNavigate();
     const { id } = useParams();
     const {movie} = useSelector((state) => state);
+    const {movieTrailer} = useSelector((state) => state);
 
     useEffect(() => {
-        dispatch(getMovieById(id));
-        navigate(`/movie/${id}`);
-    }, [dispatch, navigate, id, movie]);
+        const fetchMovieDetails = async () => {
+            await dispatch(getMovieById(id));
+            navigate(`/movie/${id}`);
+        };
+        fetchMovieDetails();
+    }, [dispatch, navigate, id]);
     return (
         <div className={"container"}>
             <div className={"movie-card"}>
@@ -29,14 +33,6 @@ const MoviePage = () => {
                             <p className={"movie-overview"}>{movie.overview}</p>
                             <p className={"movie-date"}>Дата выхода: {movie.release_date}</p>
                             <p className={"movie-rating"}>Рейтинг: {movie.vote_average}</p>
-                            <div className={"movie-genres"}>
-                                <p className={"movie-genre"}>Жанры:</p>
-                                {
-                                    movie.genres.map((genre) => {
-                                        return <p className={"movie-genre"}>{genre.name}</p>
-                                    })
-                                }
-                            </div>
                         </div>
                     </div>
                 </div>
