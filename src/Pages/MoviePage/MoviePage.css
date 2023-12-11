@@ -1,0 +1,24 @@
+.movie-box img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.movie-box {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.movie-title {
+    font-weight: 900;
+}
+
+
+.movie-genres {
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+}

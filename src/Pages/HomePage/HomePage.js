@@ -22,13 +22,14 @@ const HomePage = () => {
         dispatch(getMovies(currentPage));
     }, [dispatch, currentPage]);
 
-    console.log(movies);
 
     const handlePageChange = (newPage) => {
         setCurrentPage(newPage);
         // Используйте `navigate` для изменения пути
         navigate(`?page=${newPage}`);
     };
+
+    console.log("Movies:", movies);
 
     return (
         <div className={'container'}>

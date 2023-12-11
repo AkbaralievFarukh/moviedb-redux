@@ -7,9 +7,9 @@ const Header = () => {
         <header className={"header"}>
             <div className={"container"}>
                 <div className={"header-wrapper"}>
-                    <Link to={"/"}>Home</Link>
-                    <Link to={"/"}>Movie</Link>
-                    <Link to={"/"}>Search</Link>
+                    <Link to={"/"}>Главная</Link>
+                    <Link to={"/"}>Жанры</Link>
+                    <Link to={"/"}>Поиск</Link>
                 </div>
             </div>
         </header>
