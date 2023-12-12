@@ -1,22 +1,27 @@
 import React from 'react';
-import './MovieItem.css'
-import {Link} from "react-router-dom";
+import { Link } from 'react-router-dom';
+import {Card, CardContent, CardMedia, Typography, Grid} from '@mui/material';
+import './MovieItem.css';
 
-
-
-const MovieItem = ({movie}) => {
+const MovieItem = ({ movie }) => {
     return (
-        <div className={"col-3"}>
-            <Link to={`/movie/${movie.id}`}>
-                <div className={"card"}>
-                    <img className={"card-img"} src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title}/>
-                    <div className={"card-body"}>
-                        <h5 className={"card-title"}>{movie.title}</h5>
-                        <p className={"card-date"}>{movie.release_date}</p>
-                    </div>
-                </div>
-            </Link>
-        </div>
+        <Link to={`/movie/${movie.id}`} style={{ textDecoration: 'none' }}>
+            <Card sx={{height: "100%"}}>
+                <CardMedia
+                    component="img"
+                    alt={movie.title}
+                    image={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                />
+                <CardContent>
+                    <Typography variant="h6" component="div">
+                        {movie.title}
+                    </Typography>
+                    <Typography variant="subtitle2" color="textSecondary">
+                        {movie.release_date}
+                    </Typography>
+                </CardContent>
+            </Card>
+        </Link>
     );
 };
 

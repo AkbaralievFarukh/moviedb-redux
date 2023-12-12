@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate, useParams} from "react-router-dom";
-import {clearMovie, getMovieById, getMovieTrailer} from "../../Redux/Actions/MovieAction";
+import {clearMovie, getMovieById} from "../../Redux/Actions/MovieAction";
 import './MoviePage.css'
+import {Container} from "@mui/material";
 
 const MoviePage = () => {
     const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const MoviePage = () => {
         dispatch(clearMovie())
     }, [dispatch, navigate, id]);
     return (
-        <div className={"container"}>
+        <Container >
             <div className={"movie-card"}>
                 <div className={"row"}>
                     <div className={"col-6"}>
@@ -37,7 +38,7 @@ const MoviePage = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Container>
     );
 };
 
