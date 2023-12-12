@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate, useParams} from "react-router-dom";
-import {getMovieById, getMovieTrailer} from "../../Redux/Actions/MovieAction";
+import {clearMovie, getMovieById, getMovieTrailer} from "../../Redux/Actions/MovieAction";
 import './MoviePage.css'
 
 const MoviePage = () => {
@@ -9,7 +9,6 @@ const MoviePage = () => {
     const navigate = useNavigate();
     const { id } = useParams();
     const {movie} = useSelector((state) => state);
-    const {movieTrailer} = useSelector((state) => state);
 
     useEffect(() => {
         const fetchMovieDetails = async () => {
@@ -17,6 +16,7 @@ const MoviePage = () => {
             navigate(`/movie/${id}`);
         };
         fetchMovieDetails();
+        dispatch(clearMovie())
     }, [dispatch, navigate, id]);
     return (
         <div className={"container"}>

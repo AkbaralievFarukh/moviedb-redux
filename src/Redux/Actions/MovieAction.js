@@ -23,11 +23,8 @@ export const getMovieById = (id) => {
     }
 }
 
-export const getMovieTrailer = (id) => {
+export const clearMovie = () => {
     return dispatch => {
-        axios(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=2336723e3b751d0f27f68be87a1da76c&language=ru-RU`)
-            .then(({data}) => {
-                dispatch({type: GET_MOVIE_BY_ID, payload: data})
-            })
+        dispatch({type: GET_MOVIE_BY_ID, payload: {}})
     }
 }
