@@ -1,7 +1,6 @@
 import React from 'react';
 import MovieItem from "../MovieItem/MovieItem";
 import {Grid} from "@mui/material";
-import './MovieList.css'
 
 const MovieList = ({movies}) => {
     return (

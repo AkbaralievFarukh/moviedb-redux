@@ -4,7 +4,7 @@ import { getMovies } from '../../Redux/Actions/MovieAction';
 import MovieList from '../../Components/MovieList/MovieList';
 import { useNavigate, useLocation } from 'react-router-dom';
 import queryString from 'query-string';
-import './HomePage.css';
+import { Container, Pagination } from "@mui/material";
 
 const HomePage = () => {
     const dispatch = useDispatch();
@@ -22,31 +22,27 @@ const HomePage = () => {
         dispatch(getMovies(currentPage));
     }, [dispatch, currentPage]);
 
+    const totalPageCount = 10; // Update this with the total number of pages
 
-    const handlePageChange = (newPage) => {
+    const handlePageChange = (event, newPage) => {
+        event.preventDefault();
         setCurrentPage(newPage);
         // Используйте `navigate` для изменения пути
         navigate(`?page=${newPage}`);
     };
 
-    console.log("Movies:", movies);
-
     return (
-        <div className={'container'}>
+        <Container>
             <MovieList movies={movies} />
-
-            {/* Добавьте элементы для пагинации */}
-            <div className="pagination">
-                <button
-                    onClick={() => handlePageChange(currentPage - 1)}
-                    disabled={currentPage === 1}
-                >
-                    Previous
-                </button>
-                <span>{currentPage}</span>
-                <button onClick={() => handlePageChange(currentPage + 1)}>Next</button>
-            </div>
-        </div>
+            <Pagination
+                count={totalPageCount}
+                page={currentPage}
+                onChange={handlePageChange}
+                variant="outlined"
+                shape="rounded"
+                style={{ marginTop: '20px', marginBottom: '20px', display: 'flex', justifyContent: 'center'}}
+            />
+        </Container>
     );
 };
 

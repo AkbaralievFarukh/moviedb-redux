@@ -49,3 +49,8 @@ a {
   max-width: 50%;
   padding: 15px;
 }
+
+.css-19xm0h7-MuiButtonBase-root-MuiPaginationItem-root {
+  color: white !important;
+  border: 1px solid white!important;
+}

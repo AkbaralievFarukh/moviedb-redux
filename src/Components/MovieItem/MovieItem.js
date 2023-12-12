@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {Card, CardContent, CardMedia, Typography, Grid} from '@mui/material';
-import './MovieItem.css';
 
 const MovieItem = ({ movie }) => {
     return (
