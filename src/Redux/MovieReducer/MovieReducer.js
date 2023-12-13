@@ -1,4 +1,4 @@
-import {CLEAR_MOVIE, GET_MOVIE_BY_ID, GET_MOVIE_TRAILER, GET_MOVIES} from "../type";
+import {CLEAR_MOVIE, CLEAR_MOVIES, GET_MOVIE_BY_ID, GET_MOVIE_TRAILER, GET_MOVIES} from "../type";
 
 const initialState = {
     movies: [],
@@ -14,6 +14,8 @@ export const moviesReducer = (state = initialState, action) => {
         case GET_MOVIE_TRAILER:
             return {...state, movieTrailer: action.payload};
         case CLEAR_MOVIE:
+            return initialState;
+        case CLEAR_MOVIES:
             return initialState;
         default:
             return state;

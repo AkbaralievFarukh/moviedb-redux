@@ -28,3 +28,9 @@ export const clearMovie = () => {
         dispatch({type: GET_MOVIE_BY_ID, payload: {}})
     }
 }
+
+export const clearMovies = () => {
+    return dispatch => {
+        dispatch({type: GET_MOVIES, payload: []})
+    }
+}
