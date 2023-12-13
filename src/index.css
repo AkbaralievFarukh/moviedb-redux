@@ -77,4 +77,7 @@ a {
   .carousel-poster p:not(:nth-child(1)) {
     display: none;
   }
+  .header-wrapper a {
+    font-size: 18px !important;
+  }
 }
