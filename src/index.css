@@ -54,3 +54,33 @@ a {
   color: white!important;
   border: 1px solid white!important;
 }
+
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-poster {
+    width: 90% !important;
+  }
+}
+
+@media screen and (max-width: 622px) {
+  .carousel-poster {
+    flex-direction: column;
+    align-items: center!important;
+    text-align: center!important;
+  }
+  .carousel-poster__img {
+    max-width: 200px!important;
+    max-height: 400px!important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .carousel-poster p:not(:nth-child(1)) {
+    display: none;
+  }
+}
