@@ -15,6 +15,7 @@ import {Autoplay, EffectFade, Navigation, Pagination} from 'swiper/modules';
 import {useDispatch, useSelector} from "react-redux";
 import {getMovies} from "../../Redux/Actions/MovieAction";
 import {BACKDROP_URL, IMAGE_URL} from "../../Config/Config";
+import {Link} from "react-router-dom";
 
 const Carousel = () => {
     const dispatch = useDispatch();
@@ -35,6 +36,7 @@ const Carousel = () => {
                         delay: 2500,
                         disableOnInteraction: false,
                     }}
+                    allowTouchMove={false}
                     modules={[EffectFade, Navigation, Pagination, Autoplay]}
                     className="mySwiper"
                 >
@@ -48,14 +50,16 @@ const Carousel = () => {
                                             backgroundImage: `url(${BACKDROP_URL}${movie.backdrop_path})`,
                                         }
                                     }>
-                                        <div className='carousel-poster'>
-                                            <img src={`${IMAGE_URL}${movie.poster_path}`} alt="" className='carousel-poster__img' />
-                                            <div>
-                                                <h3>{movie.title}</h3>
-                                                <p>{movie.vote_average}</p>
-                                                <p>{movie.overview}</p>
+                                        <Link to={`/movie/${movie.id}`}>
+                                            <div className='carousel-poster'>
+                                                <img src={`${IMAGE_URL}${movie.poster_path}`} alt="" className='carousel-poster__img' />
+                                                <div>
+                                                    <h3>{movie.title}</h3>
+                                                    <p>Рейтинг: {movie.vote_average}</p>
+                                                    <p>{movie.overview}</p>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </Link>
                                     </div>
                                 </SwiperSlide>
                             ))
