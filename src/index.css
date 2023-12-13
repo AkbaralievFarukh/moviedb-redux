@@ -61,12 +61,6 @@ a {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .carousel-poster {
-    width: 90% !important;
-  }
-}
-
 @media screen and (max-width: 622px) {
   .carousel-poster {
     flex-direction: column;
