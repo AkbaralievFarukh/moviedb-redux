@@ -21,7 +21,7 @@ const MoviePage = () => {
     }, [dispatch, navigate, id]);
     return (
         <Container >
-            <Grid container spacing={2} sx={{marginTop: '30px', marginBottom: '30px'}}>
+            <Grid container spacing={2} sx={{marginTop: '30px', marginBottom: '30px'}} className={"movie-page"}>
                 <Grid item xs={12} md={6}>
                     <img className={"movie-poster"} src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
                 </Grid>
