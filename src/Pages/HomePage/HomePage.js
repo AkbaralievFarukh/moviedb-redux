@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {clearMovies, getMovies} from '../../Redux/Actions/MovieAction';
+import {getMovies} from '../../Redux/Actions/MovieAction';
 import MovieList from '../../Components/MovieList/MovieList';
 import {useNavigate, useLocation} from 'react-router-dom';
 import queryString from 'query-string';
