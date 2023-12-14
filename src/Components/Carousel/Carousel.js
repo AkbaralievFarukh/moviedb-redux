@@ -42,7 +42,7 @@ const Carousel = () => {
                 >
                     {
                         movies
-                            .filter(movie => movie.backdrop_path !== null)
+                            .filter(movie => movie.backdrop_path !== null && movie.overview !== "")
                             .map(movie => (
                                 <SwiperSlide key={movie.id}>
                                     <div className='carousel-img' style={

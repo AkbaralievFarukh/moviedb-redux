@@ -15,7 +15,7 @@ const GenresList = () => {
         <Box className={"genres-list"}>
             {
                 genres.map(genre => (
-                    <Box key={genre.id}>
+                    <Box className={"genre-link"}  key={genre.id}>
                         <Link to={`/genres/${genre.id}`}>
                             {genre.name.toUpperCase()}
                         </Link>
