@@ -1,8 +1,17 @@
-import {CLEAR_MOVIE, CLEAR_MOVIES, GET_MOVIE_BY_ID, GET_MOVIE_TRAILER, GET_MOVIES} from "../type";
+import {
+    CLEAR_MOVIE,
+    CLEAR_MOVIES,
+    GET_GENRES,
+    GET_MOVIE_BY_ID,
+    GET_MOVIE_TRAILER,
+    GET_MOVIES,
+    GET_MOVIES_BY_GENRE
+} from "../type";
 
 const initialState = {
     movies: [],
     movie: {},
+    genres: [],
 };
 
 export const moviesReducer = (state = initialState, action) => {
@@ -17,6 +26,10 @@ export const moviesReducer = (state = initialState, action) => {
             return initialState;
         case CLEAR_MOVIES:
             return initialState;
+        case GET_GENRES:
+            return {...state, genres: action.payload.genres};
+        case GET_MOVIES_BY_GENRE:
+            return {...state, movies: action.payload.results};
         default:
             return state;
     }

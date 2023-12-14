@@ -8,7 +8,7 @@ const Header = () => {
             <div className={"container"}>
                 <div className={"header-wrapper"}>
                     <Link to={"/"}>Главная</Link>
-                    <Link to={"/"}>Жанры</Link>
+                    <Link to={"/genres"}>Жанры</Link>
                     <Link to={"/"}>Поиск</Link>
                 </div>
             </div>

@@ -2,8 +2,8 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate, useParams} from "react-router-dom";
 import {clearMovie, getMovieById} from "../../Redux/Actions/MovieAction";
-import './MoviePage.css'
 import {Container, Grid, Typography} from "@mui/material";
+import './MoviePage.css'
 
 const MoviePage = () => {
     const dispatch = useDispatch();

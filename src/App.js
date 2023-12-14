@@ -3,7 +3,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import HomePage from "./Pages/HomePage/HomePage";
 import Header from "./Components/Header/Header";
 import MoviePage from "./Pages/MoviePage/MoviePage";
-import Carousel from "./Components/Carousel/Carousel";
+import GenrePage from "./Pages/GengrePage/GenrePage";
 
 const App = () => {
     return (
@@ -12,6 +12,8 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<HomePage/>}/>
                 <Route path="/movie/:id" element={<MoviePage/>}/>
+                <Route path="/genres" element={<GenrePage/>}/>
+                <Route path="/genres/:id" element={<GenrePage/>}/>
             </Routes>
         </BrowserRouter>
     );

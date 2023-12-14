@@ -1,0 +1,10 @@
+.genres-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0;
+    gap: 30px;
+}
