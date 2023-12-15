@@ -4,6 +4,7 @@ import HomePage from "./Pages/HomePage/HomePage";
 import Header from "./Components/Header/Header";
 import MoviePage from "./Pages/MoviePage/MoviePage";
 import GenrePage from "./Pages/GengrePage/GenrePage";
+import SearchPage from "./Pages/SearchPage/SearchPage";
 
 const App = () => {
     return (
