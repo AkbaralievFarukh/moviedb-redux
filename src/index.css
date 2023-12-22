@@ -50,10 +50,6 @@ a {
   padding: 15px;
 }
 
-.card-media {
-  min-height: calc(100% - 83px);
-}
-
 .MuiPagination-ul button {
   color: white!important;
   border: 1px solid white!important;
