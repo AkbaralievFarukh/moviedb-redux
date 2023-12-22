@@ -1,11 +1,19 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import {Card, CardContent, CardMedia, Typography, Tooltip} from '@mui/material';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const MovieItem = ({ movie }) => {
+    useEffect(() => {
+        AOS.init();
+    }, [])
     return (
         <Link to={`/movie/${movie.id}`} style={{ textDecoration: 'none' }}>
-            <Card sx={{height: "100%"}}>
+            <Card sx={{height: "100%"}}
+                  data-aos="flip-left"
+                  data-aos-easing="ease-out-cubic"
+                  data-aos-duration="2000">
                 <CardMedia
                     className={"card-media"}
                     component="img"

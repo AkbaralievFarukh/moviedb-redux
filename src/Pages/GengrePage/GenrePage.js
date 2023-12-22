@@ -8,7 +8,7 @@ import MovieList from "../../Components/MovieList/MovieList";
 
 const GenrePage = () => {
     const dispatch = useDispatch()
-    const {movies} = useSelector(state => state)
+    const movies = useSelector(state => state.movies)
     const {id} = useParams()
     useEffect(() => {
         dispatch(getMovieByGenre(id))

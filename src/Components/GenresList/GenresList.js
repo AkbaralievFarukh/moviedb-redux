@@ -7,7 +7,7 @@ import './GenresList.css'
 
 const GenresList = () => {
     const dispatch = useDispatch();
-    const {genres} = useSelector(state => state);
+    const genres = useSelector(state => state.genres);
     useEffect(() => {
         dispatch(getGenres())
     }, [dispatch]);

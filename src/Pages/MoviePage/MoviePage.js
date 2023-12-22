@@ -9,7 +9,7 @@ const MoviePage = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { id } = useParams();
-    const {movie} = useSelector((state) => state);
+    const movie = useSelector((state) => state.movie);
 
     useEffect(() => {
         const fetchMovieDetails = async () => {

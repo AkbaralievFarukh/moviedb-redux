@@ -11,7 +11,7 @@ const HomePage = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const location = useLocation();
-    const {movies} = useSelector((state) => state);
+    const movies = useSelector((state) => state.movies);
 
     // Получаем значение параметра "page" из строки запроса
     const queryParams = queryString.parse(location.search);
@@ -21,7 +21,6 @@ const HomePage = () => {
 
     // Используйте useEffect для установки начального значения currentPage
     useEffect(() => {
-        console.log("Setting currentPage:", currentPageFromQuery);
         setCurrentPage(currentPageFromQuery);
     }, [currentPageFromQuery]);
 
