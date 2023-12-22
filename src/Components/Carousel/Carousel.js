@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -12,19 +12,11 @@ import './Carousel.css';
 
 // import required modules
 import {Autoplay, EffectFade, Navigation, Pagination} from 'swiper/modules';
-import {useDispatch, useSelector} from "react-redux";
-import {getMovies} from "../../Redux/Actions/MovieAction";
 import {BACKDROP_URL, IMAGE_URL} from "../../Config/Config";
 import {Link} from "react-router-dom";
 
-const Carousel = () => {
-    const dispatch = useDispatch();
-    const {movies} = useSelector(state => state);
+const Carousel = ({movies}) => {
     const filterMoviesBanner = movies.filter(movie => movie.backdrop_path !== null && movie.overview !== "")
-    useEffect(() => {
-        dispatch(getMovies())
-    }, [dispatch]);
-    console.log(movies)
     return (
         <>
             <>

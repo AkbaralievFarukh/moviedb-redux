@@ -40,7 +40,7 @@ const HomePage = () => {
 
     return (
         <>
-            <Carousel/>
+            <Carousel movies={movies}/>
             <Container>
                 <MovieList movies={movies}/>
                 <Pagination
