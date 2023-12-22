@@ -20,6 +20,7 @@ import {Link} from "react-router-dom";
 const Carousel = () => {
     const dispatch = useDispatch();
     const {movies} = useSelector(state => state);
+    const filterMoviesBanner = movies.filter(movie => movie.backdrop_path !== null && movie.overview !== "")
     useEffect(() => {
         dispatch(getMovies())
     }, [dispatch]);
@@ -29,7 +30,7 @@ const Carousel = () => {
             <>
                 <Swiper
                     effect={'fade'}
-                    slidesPerView={3}
+                    slidesPerView={1}
                     spaceBetween={30}
                     loop={true}
                     autoplay={{
@@ -41,9 +42,7 @@ const Carousel = () => {
                     className="mySwiper"
                 >
                     {
-                        movies
-                            .filter(movie => movie.backdrop_path !== null && movie.overview !== "")
-                            .map(movie => (
+                        filterMoviesBanner.map(movie => (
                                 <SwiperSlide key={movie.id}>
                                     <div className='carousel-img' style={
                                         {
