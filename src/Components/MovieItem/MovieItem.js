@@ -10,7 +10,7 @@ const MovieItem = ({ movie }) => {
     }, [])
     return (
         <Link to={`/movie/${movie.id}`} style={{ textDecoration: 'none' }}>
-            <Card sx={{height: "100%"}}
+            <Card sx={{height: "100%", background: 'transparent'}}>
                   data-aos="flip-left"
                   data-aos-easing="ease-out-cubic"
                   data-aos-duration="2000">
@@ -20,13 +20,13 @@ const MovieItem = ({ movie }) => {
                     alt={movie.title}
                     image={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                 />
-                <CardContent>
+                <CardContent sx={{color: 'white'}}>
                     <Tooltip title={movie.title}>
                         <Typography noWrap={true} variant="h6" component="div">
                             {movie.title}
                         </Typography>
                     </Tooltip>
-                    <Typography variant="subtitle2" color="textSecondary">
+                    <Typography variant="subtitle2" color="white">
                         {movie.release_date}
                     </Typography>
                 </CardContent>

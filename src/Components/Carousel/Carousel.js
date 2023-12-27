@@ -4,33 +4,26 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/effect-fade';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
 import './Carousel.css';
 
 // import required modules
-import {Autoplay, EffectFade, Navigation, Pagination} from 'swiper/modules';
+import {Autoplay} from 'swiper/modules';
 import {BACKDROP_URL, IMAGE_URL} from "../../Config/Config";
 import {Link} from "react-router-dom";
 
 const Carousel = ({movies}) => {
-    const filterMoviesBanner = movies.filter(movie => movie.backdrop_path !== null && movie.overview !== "")
+    const filterMoviesBanner = movies.filter(movie => movie.backdrop_path !== null)
     return (
         <>
             <>
                 <Swiper
-                    effect={'fade'}
-                    slidesPerView={1}
-                    spaceBetween={30}
                     loop={true}
                     autoplay={{
                         delay: 2500,
                         disableOnInteraction: false,
                     }}
                     allowTouchMove={false}
-                    modules={[EffectFade, Navigation, Pagination, Autoplay]}
+                    modules={[Autoplay]}
                     className="mySwiper"
                 >
                     {
